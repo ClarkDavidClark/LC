@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=0.45, width=device-width, user-scalable=no" />
+		
+		<link rel="stylesheet" href="css/BlackBerry-JQM-all.css" />
+		<script src="js/BlackBerry-JQM-all.js"></script>
+		<script src="js/mcalc.js"></script>
+		<script src="js/lcalc.js"></script>
+		<script src="js/dcalc.js"></script>
+		<script src="js/reset.js"></script>
+		<script src="js/reset1.js"></script>
+		<script src="js/dr.js"></script>
+
+	</head>
+<body>
+<!--main page-->
+	
+	<div data-role="page" data-theme="a" id="main">
+		<div data-role="header" data-fullscreen="true" align="center">
+			<h1>Know Your Future</h1>
+		</div>
+		<center>
+			<img src="images/h.png" width="768" height="300"><br /><br />
+		</center>
+		<div data-role="content">
+	<!--Calculate Button-->
+			
+			<div data-role="collapsible" data-collapsed="true">
+			   <h1><center>Know It</center></h1>
+			   <a href="#love" data-role="button"><img src="images/heart.png" width="64" height="54"><label> Love </label></a>
+			   <a href="#marry" data-role="button"><img src="images/ring.png" width="64" height="54"><label> Marriage</label></a>
+			   <a href="#dead" data-role="button"><img src="images/s.png" width="100" height="54">Death</a>
+			</div>
+			<a href="#about" data-role="button">About</a>
+			
+		</div>
+	</div>
+<!--help page-->
+		<div data-role="page" data-theme="a" id="help">
+			<div data-role="header" data-fullscreen="true" align="center">
+				<h1>Help</h1>
+			</div>
+			<div data-role="content">
+				
+			</div>
+			<!--Footer-->
+			<div data-role="footer" data-position="fixed" data-fullscreen="true">
+					<div data-role="navbar" data-iconpos="left">
+						<a href="#main" data-icon="back" data-transition="fade">Back</a>
+					</div>
+			</div>
+		</div>
+<!--about page-->
+		<div data-role="page" data-theme="a" id="about">
+			<div data-role="header" data-fullscreen="true" align="center">
+				<h1>About Know Your Future</h1>
+			</div>
+			<div data-role="content">
+			<img src="images/About.png" width="768" height="1140"></a>
+				
+			</div>
+			<!--Footer-->
+			<div data-role="footer" data-position="fixed" data-fullscreen="true">
+					<div data-role="navbar" data-iconpos="left">
+						<a href="#main" data-transition="fade">Back</a>
+					</div>
+			</div>
+		</div>
+<!--Love Calculator-->
+			<div data-role="page" data-theme="a" id="love">
+				<div data-role="header" data-fullscreen="true" align="center">
+					<h1>Love Future</h1>
+				</div>
+				<div data-role="content">
+					<center>
+					<img src="images/h1.png"><br/>
+					<label>Name of Person 1:</label>
+					<form id="frm">
+					<input type="text" id="txtnamep1" />
+					<img src="images/heart.png" width="100" height="80"><br/>
+					<label>Name of Person 2:</label>
+					<input type="text" id="txtnamep2" /><br/>
+					</form>
+						<button data-icon="check" data-inline="true" onClick="lcalc()">Result!</button>
+						<button data-inline="true" data-icon="refresh" onClick="formreset()">Reset</button>
+					</center>
+				</div>
+				<!--Footer-->
+				<div data-role="footer" data-position="fixed" data-fullscreen="true">
+					<div data-role="navbar" data-iconpos="left">
+						<a href="#main" data-icon="back" data-transition="fade">Back</a>
+					</div>
+				</div>
+			</div>
+<!--RESULTS Love Calculator-->
+			<div data-role="page" data-theme="a" id="rlove" onLoad="lcalc.js">
+				<div data-role="header" data-fullscreen="true" align="center">
+					<h1>Love Result</h1>
+				</div>
+				<div data-role="content">
+				<center>
+					<br /><br /><br /><br /><br /><img src="images/heart.png" height="300" width="300" /><br /><br /><br /><br /><br />
+					<label>You people are
+					<input type="text" readonly id="txtresult" value="" /> %</label><br />
+					<label>compatible.</label><br />
+				</center>
+				</div>
+				<!--Footer-->
+				<div data-role="footer" data-position="fixed" data-fullscreen="true">
+					<div data-role="navbar" data-iconpos="left">
+						<a href="#main" data-icon="back" data-transition="fade">Back to Main</a>
+					</div>
+				</div>
+			</div>
+<!--Marriage Calculator-->
+			<div data-role="page" data-theme="a" id="marry">
+				<div data-role="header" data-fullscreen="true" align="center">
+					<h1>Marriage Future</h1>
+				</div>
+				<div data-role="content">
+					<center>
+					<img src="images/h2.png">
+					<div data-role="fieldcontain">
+					<form id="frm1">
+					<table>
+					<tr>
+						<td><label>First Name:</label></td>
+						<td><input type="text" id="txtfname" value="" /></td><br/>
+					</tr>
+					<tr>
+						<td><label>Middle Name:</label></td>
+						<td><input type="text" id="txtmname" value="" /></td><br/>
+					</tr>
+					<tr>
+						<td><label>Last Name:</label></td>
+						<td><input type="text" id="txtlname" value="" /></td><br/>
+					</tr>
+					</table>
+					</div>
+					<div data-role="fieldcontain">
+					 <label for="date">Enter Your Birth Date:</label>
+					 <input type="text" name="bday" id="bdate" value="" />
+					</div>
+					<div data-role="fieldcontain">
+					</form>
+					<table>
+					<tr>
+						<td><button data-icon="check" data-iconpos="left" data-inline="true" onClick="mcalc()">Result!</button></td>
+						<td><button data-iconpos="left" data-icon="refresh" onClick="formreset1()">Reset</button></td>
+					</tr>
+					</table>
+					</div>
+					</center>
+				</div>
+				<!--Footer-->
+				<div data-role="footer" data-position="fixed" data-fullscreen="true">
+					<div data-role="navbar" data-iconpos="left">
+						<a href="#main" data-icon="back" data-transition="fade">Back</a>
+					</div>
+				</div>
+			</div>
+<!--RESULT Marriage Calculator-->
+			<div data-role="page" data-theme="a" id="rmarry" onLoad="mcalc.js">
+				<div data-role="header" data-fullscreen="true" align="center">
+					<h1>Marriage Result</h1>
+				</div>
+				<div data-role="content">
+				<center>
+					<br /><br /><br /><br /><br /><img src="images/ring.png" height="300" width="300" /><br /><br /><br /><br /><br />
+					<label>You are predicted to get married
+					<input type="text" readonly id="result1" value="" />  on Year: <input type="text" id="date_result" /></label><br />
+				</center>
+						
+				</div>
+				<!--Footer-->
+				<div data-role="footer" data-position="fixed" data-fullscreen="true">
+					<div data-role="navbar" data-iconpos="left">
+						<a href="#main" data-icon="back" data-transition="fade">Back to Main</a>
+					</div>
+				</div>
+			</div>
+<!--Death Calculator-->
+			<div data-role="page" data-theme="a" id="dead">
+				<div data-role="header" data-fullscreen="true" align="center">
+					<h1>Death Future</h1>
+				</div>
+				<div data-role="content">
+					<center>
+					<img src="images/h3.png"><br/>
+					<div data-role="fieldcontain">
+					<form id="deathr">
+					<table>
+					<tr>
+						<td><label>Name:</label></td>
+						<td><input type="text" id="txtnamep1" /></td><br/>
+					</tr>
+					<tr>
+						<td><label>Year of Birth:</label></td>
+						<td><input type="text" id="txtnamep2" /></td><br/>
+					</tr>
+					</table>
+					</form>					
+					<table>
+					<tr>
+						<td><button data-icon="check" data-iconpos="left" data-inline="true" onClick="dcalc()">Result!</button></td>
+						<td><button data-iconpos="left" data-icon="refresh" onClick="death_reset()">Reset</button></td>
+					</tr>
+					
+					</table>
+					</div>
+					</center>
+				</div>
+				<!--Footer-->
+				<div data-role="footer" data-position="fixed" data-fullscreen="true">
+				<div data-role="navbar" data-iconpos="left">
+					<a href="#main" data-icon="back" data-transition="fade">Back</a>
+				</div>
+				</div>
+			</div>
+<!--RESULT Death Calculator-->
+			<div data-role="page" data-theme="a" id="rdead" onLoad="dcalc.js">
+				<div data-role="header" data-fullscreen="true" align="center">
+					<h1>Death Result</h1>
+				</div>
+				<div data-role="content">
+				<center>
+					<br /><br /><br /><br /><br /><img src="images/s.png" height="300" width="300" /><br /><br /><br /><br /><br />
+					<label>You are predicted to die when you're
+					<input type="text" readonly id="deathresult" value="" /> years old.</label><br />
+					<br />
+				</center>
+				</div>
+				<!--Footer-->
+				<div data-role="footer" data-position="fixed" data-fullscreen="true">
+					<div data-role="navbar" data-iconpos="left">
+						<a href="#main" data-icon="back" data-transition="fade">Back to Main</a>
+					</div>
+				</div>
+			</div>		
+</body>
+</html>
